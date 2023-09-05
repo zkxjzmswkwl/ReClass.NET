@@ -22,10 +22,12 @@ using ReClassNET.Project;
 using ReClassNET.UI;
 using ReClassNET.Util;
 using ReClassNET.Util.Conversion;
+using MaterialSkin;
+using MaterialSkin.Controls;
 
 namespace ReClassNET.Forms
 {
-	public partial class MainForm : IconForm
+	public partial class MainForm : MaterialForm
 	{
 		private readonly PluginManager pluginManager;
 		private readonly IconProvider iconProvider = new IconProvider();
@@ -75,6 +77,11 @@ namespace ReClassNET.Forms
 			Contract.Ensures(currentProject != null);
 
 			InitializeComponent();
+			var sman = MaterialSkinManager.Instance;
+			sman.AddFormToManage(this);
+			sman.Theme = MaterialSkinManager.Themes.DARK;
+
+
 			UpdateWindowTitle();
 
 			mainMenuStrip.Renderer = new CustomToolStripProfessionalRenderer(true, true);
@@ -1050,6 +1057,11 @@ namespace ReClassNET.Forms
 				args.Node = classNode;
 				args.BaseAddress = address;
 			}
+		}
+
+		private void memoryViewControl_Load(object sender, EventArgs e)
+		{
+
 		}
 	}
 }

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics.Contracts;
 using System.Drawing;
@@ -6,10 +6,12 @@ using System.Linq;
 using System.Windows.Forms;
 using ReClassNET.Logger;
 using ReClassNET.UI;
+using MaterialSkin;
+using MaterialSkin.Controls;
 
 namespace ReClassNET.Forms
 {
-	public partial class LogForm : IconForm
+	public partial class LogForm : MaterialForm 
 	{
 		private class LogItem
 		{
